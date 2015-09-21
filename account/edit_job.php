@@ -26,7 +26,7 @@
 	$time = mysql_result($job_result, $i, "lastUpdateDateTime");
 	$notes = mysql_result($job_result, $i, "progressNotes");
 ?>
-<h1>Edit Account</h1>
+<h1>Edit Job Details</h1>
 	<form action="update_job.php" method="POST">
 		<table>
 		<tr>

@@ -12,5 +12,6 @@
 		<p>Phone: (07)3333-9999</p>
 		<p>Email: <a href="mailto:helpdesk@migranthelpdesk.com.au">
 		helpdesk@migranthelpdesk.com.au</a></p>
+<img alt="customer service image" height="500" src="images/contact_us.jpg" width="500">
 		
 <?php require("templates/footer.php"); ?>
