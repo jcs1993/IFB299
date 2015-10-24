@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<title><?=$account?>'s Account </title>
 
-<?php require("../templates/account_menu_sub.php") ?>
+<?php //commented out due to moving the functions from accounts to home page require require("../templates/account_menu_sub.php") ?>
 
 <?php
 	$con = mysql_connect($hostname, $username, $password) or die("Could not connect to database");
@@ -17,6 +17,12 @@
 	$row = mysql_num_rows($result);
 	$i = 0;
 	
+	echo "<h1>All Jobs - Search Result</h1>";
+	if ($row > 0){
+		echo "<p class='successful'>".$row." Matches Found</p>";
+	} else {
+		echo "<p class='unsuccessful'>No Matches Found</p>";
+	}
 	while ($i < $row)
 	{
 		$jobNumber = mysql_result($result, $i, "jobNumber"); 

@@ -1,25 +1,92 @@
 <?php require("templates/header.php"); ?>
 
 <title>Home</title>
-
-<?php if($_SESSION['user_type'] == 'Admin'){ ?>
-
-
-	<h1>Welcome Admin</h1>
-
-<?php } else if($_SESSION['user_type'] == 'Manager') { ?>
-
-	<h1>Welcome Manager</h1>
+<em class="successful"><?php
+	if (isset($_GET["success"])) {
+		$success = $_GET['success'];
+			if ($success == "1") {
+				echo ("Account Created Successfully!");
+			}
+	}  ?></em>
+<em class="successful"><?php
+	if (isset($_GET["success"])) {
+		$success = $_GET['success'];
+			if ($success == "2") {
+				echo ("Account Created Successfully! Please see a manager to have the account activated.");
+			}
+	}  ?></em>
 	
-<?php } else if($_SESSION['user_type'] == 'Volunteer') { ?>
+<em class="successful"><?php
+	if (isset($_GET["success"])) {
+		$success = $_GET['success'];
+			if ($success == "3") {
+				echo ("Password was changed successfully. Please login again with your new password.");
+			}
+	}  ?></em>
 
-	<h1>Welcome Volunteer</h1>
-	<p><a href="job_home.php">Work Orders</a></p>
-<p><a href="contractor.php">Contractors</a></p>
+
+<em class="unsuccessful"><?php
+	if (isset($_GET["success"])) {
+		$success = $_GET['success'];
+			if ($success == "0") {
+				echo ("Error! Unsuccessful, Please try again!");
+			}
+	} ?></em>
+
+
+<?php if($_SESSION['user_type'] == 'Admin' && $_SESSION['logged_in'] == true){ ?>
+
+
+	<h1>Main Menu</h1>
+	<h2>Welcome Admin</h2>
+		<hr><hr>
+		<ul>
+			<li><a href="account/manager.php">View/Update Manager Accounts</a></li>
+			<li><a href="account/volunteers.php">View/Update Volunteer Accounts</a></li>
+			<li><a href="scheduling/volunteer_roster.php">View/Update Duty Roster for Volunteer</a></li>
+			<li><a href="customer.php">View/Update Customer Accounts</a></li>
+			<li><a href="contractor.php">Contractor Management</a></li>
+			<li><a href="jobs/job_home.php">Work Orders (Jobs)</a></li>
+		</ul>
+		<hr />
+<?php } else if($_SESSION['user_type'] == 'Manager' && $_SESSION['logged_in'] == true) { ?>
+
+	<h1>&nbsp;Main Menu</h1>
+<h2>Welcome Manager</h2>
+		<hr><hr>
+		<ul>
+			<li><a href="account/volunteers.php">View/Update Volunteer Accounts</a></li>
+			<li><a href="customer.php">View/Update Customer Accounts</a></li>
+			<li><a href="contractor.php">Contractor Management</a></li>
+			<li><a href="jobs/job_home.php">Work Orders (Jobs)</a></li>
+		</ul>
+		<hr />
 	
-<?php } else if($_SESSION['user_type'] == 'Migrant') { ?>
+<?php } else if($_SESSION['user_type'] == 'Volunteer' && $_SESSION['logged_in'] == true) { ?>
 
-	<h1>Welcome Migrant</h1>
+	<h1>&nbsp;Main Menu</h1>
+<h2>Welcome Volunteer</h2>
+<hr><hr>
+
+		<ul>
+			<li><a href="scheduling/view_my_roster.php">View My Duty Roster</a></li>
+			<li><a href="customer.php">View/Update Customer Accounts</a></li>
+			<li><a href="contractor.php">Contractor Management</a></li>
+			<li><a href="jobs/job_home.php">Work Orders (Jobs)</a></li>
+		</ul>
+		<hr />
+	
+<?php } else if($_SESSION['user_type'] == 'Migrant' && $_SESSION['logged_in'] == true) { ?>
+
+	<h1>&nbsp;Main Menu</h1>
+<h2>Welcome User</h2>
+<hr><hr>
+
+		<ul>
+			<li><a href="account/job_status.php">Job Status</a></li>
+			<li><a href="account/job_history.php">Job History</a></li>
+		</ul>
+		<hr />
 	
 <?php } else { ?>
 

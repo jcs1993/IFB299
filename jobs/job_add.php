@@ -1,4 +1,4 @@
-<?php require("templates/header.php"); ?>
+<?php require("../templates/header_sub.php"); ?>
 
 <title>Work Orders - Add New Work Order</title>
 
@@ -104,6 +104,6 @@ with * are required to be completed.</p>
 	</table>
 </form>
 <hr>
-<p><a href="job_home.php">Return to Main Menu</a></p>
+<p><a href="job_home.php">Back to Jobs Menu</a></p>
 
-<?php require("templates/footer.php"); ?>
+<?php require("../templates/footer.php"); ?>

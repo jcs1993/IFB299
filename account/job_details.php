@@ -7,7 +7,7 @@ $account = $_SESSION['Username'];
 <link rel="stylesheet" href="../css/style.css">
 <title><?=$account?>'s Account </title>
 
-<?php require("../templates/account_menu_sub.php") ?>
+<?php // not using require("../templates/account_menu_sub.php") ?>
 
 <?php
 	$con = mysql_connect($hostname, $username, $password) or die("Could not connect to database");
@@ -19,7 +19,11 @@ $account = $_SESSION['Username'];
 	$job_result = mysql_query($job_query);
 	$i = 0;
 	$row = mysql_num_rows($job_result);
-	
+	echo "
+		<h1>Job Details</h1>
+		<hr /><hr />
+		<p class=information>This is the detailed information we have about your job. Please contact us if you have any further questions.</p>
+		";
 	while ($i < $row)
 	{
 		$jobnumber = mysql_result($job_result, $i, "jobNumber"); 
@@ -39,11 +43,12 @@ $account = $_SESSION['Username'];
 		<tr><td><b>Job Description: </b></td><td>$jobdesc</td></tr><br/>
 		<tr><td><b>Job Type: </b></td><td>$jobtype</td></tr><br/>
 		<tr><td><b>Job Status: </b></td><td>$jobstat</td></tr><br/>
-		<tr><td><b>Time Stamp: </b></td><td>$time</td></tr><br/>
+		<tr><td><b>Last Update: </b></td><td>$time</td></tr><br/>
 		<tr><td><b>Notes: </b></td><td>$notes</td></tr><br/>
 		";
 		
 		$i++;
 	}
+	echo "<p><a href='job_status.php'>Back to Jobs Status Menu</a></p>"
 ?>
 <?php require("../templates/footer.php"); ?>

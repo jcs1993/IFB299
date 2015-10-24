@@ -67,7 +67,7 @@ is displayed.
 			}
 	} ?></em>
 
-<form action="modify_execute.php?record=<?php echo $contractorID?>" method="post">
+<form action="modify_execute.php?record=<?php echo $contractorID?>" method="post" autocomplete="off">
 	<table <?php if($rows == 0) echo 'hidden="hidden"'?> >
 	<?php if($rows == 0 && !isset($_GET["success"])) echo '<em class="unsuccessful">Error! no records found, please check the record number and try again.</em>';?>
 		<tr>

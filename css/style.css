@@ -2,16 +2,13 @@
 	font-family: Arial, Helvetica, sans-serif;
 	height: 800px;
 	margin: 0 auto;
-	background-color: #99FF99;
+	background-color: #8AD9FF;
 }
-
 #banner {
-  height: 60px;
-  /*
+	height: 60px; /*
     Remove background-color when banner is in place
-  */
-
-  Background-color: #303D74;
+  */;
+	Background-color: #000000;
 }
 
 #menu {
@@ -37,18 +34,54 @@
 
 #menu a {
   text-decoration: none;
-  color: #00F;
+  color: #00F !important;
   padding: 8px 8px 8px 8px;
 }
 
 #menu a:hover {
-  color: #F90;
+  color: #F90 !important;
   background-color: #FFF;
 }
 .searchResults {
-	background-color: #99FF99;
+	background-color: #8AD9FF;
 }
-
 body {
-	background-color: #99FF99;
+	background-color: #8AD9FF;
+}
+.information {
+	font-style: italic;
+}
+.successful {
+	font-style: italic;
+	font-weight: bold;
+	color: #008000;
+}
+.unsuccessful {
+	font-weight: bold;
+	font-style: italic;
+	color: #FF0000;
+}
+.importantInformation {
+	font-weight: bold;
+	font-style: italic;
+	color: #CC33FF;
+	text-decoration: underline blink;
+	font-size: large;
+}
+input[type=submit] {
+	font-size: x-large;
+	font-weight: bold;
+}
+a:hover {
+	color: #0000FF !important;
+	font-weight: bold;
+}
+a:visited {
+	color: #000000;
+}
+a:link {
+	color: #000000;
+}
+a {
+	cursor: default;
 }

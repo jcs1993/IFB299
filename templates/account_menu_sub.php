@@ -6,8 +6,8 @@ $accounttype = $_SESSION['user_type'];
 
 	<div>
 		<ul>
-			<li><a href="../volunteers.php">Volunteers</a></li>
-			<li><a href="../manager.php">Managers</a></li>
+			<li><a href="manager.php">Managers</a></li>
+			<li><a href="volunteers.php">Volunteers</a></li>
 			<li><a href="../contractor.php">Contractor</a></li>
 			<li><a href="details.php">Account Details</a></li>
 			<li><a href="job.php">Jobs</a></li>
@@ -17,7 +17,7 @@ $accounttype = $_SESSION['user_type'];
 
 	<div>
 		<ul>
-			<li><a href="../volunteers.php">Volunteers</a></li>
+			<li><a href="volunteers.php">Volunteers</a></li>
 			<li><a href="../contractor.php">Contractor</a></li>
 			<li><a href="details.php">Account Details</a></li>
 			<li><a href="job.php">Jobs</a></li>

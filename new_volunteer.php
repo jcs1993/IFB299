@@ -26,9 +26,11 @@
 			}
 			else
 			{
-				mysql_query("INSERT INTO $table (FirstName, LastName, Username, Password, Email, UserLevel, Approved) VALUES ('$fname', '$lname', '$user', '$pass', '$email', 'Volunteer', '0')"); 
+				$password = password_hash($pass, PASSWORD_DEFAULT);
+
+				mysql_query("INSERT INTO $table (FirstName, LastName, Username, Password, Email, UserLevel, Approved) VALUES ('$fname', '$lname', '$user', '$password', '$email', 'Volunteer', '0')"); 
 				echo("User created successfully");
-				header("Location:home.php");
+				header("Location:home.php?success=2");
 			}
 		}
 		mysql_close();
@@ -38,24 +40,25 @@
 <title>Signup</title>
   
 	<h1>Volunteer Signup</h1>
-<p>Please complete the form to create a new volunteer account. Please note that 
-a manager must approve this request before you are able to login to the system.</p>
+<p class="information">Please complete the form to create a new volunteer account. All fields must 
+be completed.</p>
+<p class="importantInformation">Please note: A manager must approve this request before you are able to login to the system. </p>
 	<form action="new_volunteer.php" method="POST">
 	<table>
 		<tr>
-		<td>First Name:</td><td><input type="text" name="fname" /></td>
+		<td>First Name:</td><td><input type="text" name="fname" required/></td>
 		</tr>
 		<tr>
-		<td>Last Name:</td><td><input type="text" name="lname" /></td>
+		<td>Last Name:</td><td><input type="text" name="lname" required/></td>
 		</tr>
 		<tr>
-		<td>Username:</td><td><input type="text" name="user" /></td>
+		<td>Username:</td><td><input type="text" name="user" required/></td>
 		</tr>
 		<tr>
-		<td>Password:</td><td><input type="password" name="pass" /></td>
+		<td>Password:</td><td><input type="password" name="pass" required/></td>
 		</tr>
 		<tr>
-		<td>Email:</td><td><input type="text" name="email" /></td>
+		<td>Email:</td><td><input type="text" name="email" required/></td>
 		</tr>
 		<tr>
 		<td></td><td><input type="submit" value="Submit" name="Submit" /></td>

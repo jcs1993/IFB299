@@ -11,7 +11,7 @@ $account = $_SESSION['Username'];
 	<div id="sub_menu">
       <ul>
 	  <form action="job_search.php" method="POST">
-			<p>Search Client Number: </p><input type="text" name="client_search" required/>
+			<p>Search Job ID: </p><input type="text" name="id_search" />
 			<input type="submit" value="Search" />
 	  </form>
 	  <li><a href="job_list.php">Full Job List</a></li>

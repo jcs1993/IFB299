@@ -3,10 +3,9 @@
 	require("../templates/header_sub.php"); 
 	$account = $_SESSION['Username'];
 ?>
-	<link rel="stylesheet" href="../css/style.css">
-	<title><?=$account?>'s Account </title>
+	<title>Edit Job</title>
 
-<?php require("../templates/account_menu_sub.php") ?>
+<?php //commented out as not located in the accounts menu anymore require("../templates/account_menu_sub.php") ?>
 
 <?php
 	$id = $_POST['jobid'];
@@ -27,6 +26,7 @@
 	$notes = mysql_result($job_result, $i, "progressNotes");
 ?>
 <h1>Edit Job Details</h1>
+<p class="information">Update any required information and then click Save.</p>
 	<form action="update_job.php" method="POST">
 		<table>
 		<tr>
@@ -71,6 +71,6 @@
 		</tr>
 		</table>
 	</form>
-	<p><a href="../account.php">Cancel Changes</a></p>
+	<p><a href="job_home.php">Cancel Changes</a></p>
 
 <?php require("../templates/footer.php"); ?>

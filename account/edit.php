@@ -24,22 +24,23 @@ $account = $_SESSION['Username'];
 
 ?>
 	<h1>Edit Account</h1>
-	<form action="update_account.php" method="POST">
-		<p>ID: <?=$id?></p>
-		<p>Username: <?=$user?></p>
-		<p>First Name:</p><input type="text" value="<?php echo $fname ?>" name="fname" />
-		<p>Last Name:</p><input type="text" value="<?php echo $lname ?>" name="lname" />
-		<p>Email:</p><input type="text" value="<?php echo $email ?>" name="email" />
-		<p>Phone Number:</p><input type="text" value="<?php echo $phone ?>" name="phone" />
-		<p>Address:</p><input type="text" value="<?php echo $address ?>" name="address" />
-		<br />
-		<input type="submit" value="Save" />
+<p class="information">Please update any required details and then click the Save button.</p>
+	<form action="update_account.php" method="POST" autocomplete="off">
+		<table>
+		<tr><td>ID: </td><td><?=$id?></td></tr>
+		<tr><td>Username: </td><td><?=$user?></td></tr>
+		<tr><td>First Name: </td><td><input type="text" value="<?php echo $fname ?>" name="fname" /></td></tr>
+		<tr><td>Last Name: </td><td><input type="text" value="<?php echo $lname ?>" name="lname" /></td></tr>
+		<tr><td>Email: </td><td><input type="text" value="<?php echo $email ?>" name="email" /></td></tr>
+		<tr><td>Phone Number: </td><td><input type="text" value="<?php echo $phone ?>" name="phone" /></td></tr>
+		<tr><td>Address: </td><td><input type="text" value="<?php echo $address ?>" name="address" /></td></tr>
+		<tr><td></td><td>
+			<input type="submit" value="Save" style="width: 126px" /></td></tr>
+		</table>
 	</form>
-	<form action="../account.php">
-		<input type="submit" value="Cancel">
-	</form>
-	<form action="password.php">
-		<input type="submit" value="Change Password">
-	</form>
+	<p><a href="password.php">Change Password</a></p>
+	<p><a href="../account.php">Back to Accounts Menu</a></p>
+	
+	
 
 <?php require("../templates/footer.php"); ?>
