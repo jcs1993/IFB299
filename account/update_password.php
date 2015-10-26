@@ -12,13 +12,14 @@
 	
 	if ($pass == $retype)
 	{
-		$update = " UPDATE $table SET Password='$pass' WHERE Username='$account'";
+		$password = password_hash($pass, PASSWORD_DEFAULT);
+		$update = " UPDATE $table SET Password='$password' WHERE Username='$account'";
 		mysql_query($update);
 		mysql_close();
-		header("Location:../logout.php");
+		header("Location:../logout.php?success=1");
 	}
 	else
 	{
-		echo '<p>The passwords didnt match</p>';
+		header("Location:password.php?success=0");
 	}
 ?>

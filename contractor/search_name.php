@@ -12,7 +12,7 @@ gets the input and posts to search_results.php?option1
 <h2>Search by Business Name</h2>
 <hr><hr>
 <p class="information">Enter the contractors business name to conduct a search.</p>
-<form action="search_results.php?option=1" method="post">
+<form action="search_results.php?option=1" method="post" autocomplete="off">
 	<table>
 		<tr>
 			<td>Enter Name:</td>

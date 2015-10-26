@@ -6,7 +6,7 @@ Main page for the contractor database functions. This page links to other pages 
 
 <title>Contractor Management System - Main Menu</title>
 
-<h1>Contractor Management System</h1>		
+<h1>Contractor Management</h1>		
 <hr>
 <hr>
 <p class="information">Add new contractor information to the system</p>
